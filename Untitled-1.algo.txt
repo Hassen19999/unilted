@@ -1,0 +1,67 @@
+
+ prblem 1 :
+ def sum_of_distinct_elements(set1, set2):
+    distinct_elements_sum = 0
+    for element in set1:
+        if element not in set2:
+            distinct_elements_sum += element
+    for element in set2:
+        if element not in set1:
+            distinct_elements_sum += element
+    return distinct_elements_sum
+
+set1 = [3, 1, 7, 9]
+set2 = [2, 4, 1, 9, 3]
+result = sum_of_distinct_elements(set1, set2)
+print(result) # Sortie: 13
+problem 2 :
+Algorithm dot_product(v1, v2, ps)
+// Calculate the dot product of v1 and v2 and store the result in ps
+Begin
+    ps ← 0
+    For i from 1 to length(v1) do
+        ps ← ps + v1[i] * v2[i]
+    End For
+End
+
+Algorithm orthogonal_vectors()
+// Determine whether two vectors of IR given are orthogonal
+Begin
+    n ← number of pairs of vectors
+    For i from 1 to n do
+        Read v1[i] and v2[i]
+        ps ← 0
+        dot_product(v1[i], v2[i], ps) // call the procedure to calculate the dot product
+        If ps = 0 then
+            Write "The vectors v1[", i, "] and v2[", i, "] are orthogonal."
+        Else
+            Write "The vectors v1[", i, "] and v2[", i, "] are not orthogonal."
+        End If
+    End For
+End
+Now, here's the modified algorithm using a function called dot_product to calculate the dot (scalar) product of two vectors:
+
+Algorithm dot_product(v1, v2)
+// Calculate and return the dot product of v1 and v2
+Begin
+    ps ← 0
+    For i from 1 to length(v1) do
+        ps ← ps + v1[i] * v2[i]
+    End For
+    Return ps
+End
+
+Algorithm orthogonal_vectors()
+// Determine whether two vectors of IR given are orthogonal
+Begin
+    n ← number of pairs of vectors
+    For i from 1 to n do
+        Read v1[i] and v2[i]
+        ps ← dot_product(v1[i], v2[i]) // call the function to calculate the dot product
+        If ps = 0 then
+            Write "The vectors v1[", i, "] and v2[", i, "] are orthogonal."
+        Else
+            Write "The vectors v1[", i, "] and v2[", i, "] are not orthogonal."
+        End If
+    End For
+End
